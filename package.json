@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.1.1",
+    "mongoose": "^6.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "env-cmd -f ./config/dev.env nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
