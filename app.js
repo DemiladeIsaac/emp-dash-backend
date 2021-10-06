@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const path = require("path");  
 
 const User = require('./models/user');
 const Role = require('./models/role');
+const empRouter = require('./routes/employee.route');
 
 const connectDB = require('./db/mongoose');
 connectDB();
@@ -14,6 +16,8 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
+app.use("/images", express.static(path.join("backend/images")));  
+app.use('/emp',empRouter);
 
 require('./routes/auth.route')(app);
 require('./routes/user.routes')(app);
